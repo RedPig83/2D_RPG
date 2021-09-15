@@ -11,12 +11,15 @@ public class RPGGameManager : MonoBehaviour
     //클래스 자체에 속하므로 RPGGameManager.sharedInstance의 복사본은 메모리에 단 하나만 존재한다.
 
     public SpawnPoint playerSpawnPoint;
+    public RPGCameraManager cameraManager;
 
     public void SpawnPlayer()
     {
         if (playerSpawnPoint != null)
         {
             GameObject player = playerSpawnPoint.SpawnObject();
+
+            cameraManager.virtualCamera.Follow = player.transform;
         }
     }
 

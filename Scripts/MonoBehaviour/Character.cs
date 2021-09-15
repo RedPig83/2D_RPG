@@ -6,4 +6,9 @@ public abstract class Character : MonoBehaviour
     public HitPoint hp;
     public float fMaxHp;
     public float fStartHp;
+
+    public virtual void KillCharacter()
+    {
+        Destroy(gameObject);
+    }
 }
